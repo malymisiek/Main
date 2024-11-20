@@ -4,7 +4,7 @@ body
 }
 
 p  {
-  color: #ffffff;
+  color: white;
 }
 
 img {
@@ -13,5 +13,5 @@ height: 200px;
 }
 
 h2 {
-    color: #ffffff;
+    color: white;
 }
