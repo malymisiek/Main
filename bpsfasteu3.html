@@ -5,6 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="icon.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/erik5388/gracket.js/dist/gracket.min.css">
+<script src="https://cdn.jsdelivr.net/gh/erik5388/gracket.js/dist/gracket.min.js"></script>
+  <script>
+    const data = [
+        [
+            ["Team 1", "Team 2"], // Mecz 1 rundy 1
+            ["Team 3", "Team 4"], // Mecz 2 rundy 1
+        ],
+        [
+            ["Winner of M1", "Winner of M2"], // Finał
+        ]
+    ];
+
+    $("#bracket").gracket({ src: data });
+  </script>
   <style>
     body {
       background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(70, 0, 0) 25%, rgb(130, 0, 0) 50%, rgb(70, 0, 0) 75%, rgb(0, 0, 0) 100%);
@@ -70,5 +85,5 @@
       <img src="spike.png" alt="Profil">
     </div>
   </div>
-
+<div id="bracket"></div>
 </body>
