@@ -62,11 +62,20 @@
       color: white;
       font-size: 18px;
     }
-    /* Poprawiony CSS dla drabinki */
-    .bracket {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+        iframe {
+      width: 100%; /* Wypełnia całą szerokość dostępnego kontenera */
+      height: 70vh; /* 70% wysokości widoku */
+      border: none;
+    }
+    @media (max-width: 768px) {
+      iframe {
+        height: 60vh; /* Mniejsza wysokość na telefonach */
+      }
+    }
+    @media (max-width: 480px) {
+      iframe {
+        height: 50vh; /* Jeszcze mniejsza wysokość na bardzo małych ekranach */
+      }
     }
   </style>
 </head>
