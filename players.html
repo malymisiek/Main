@@ -74,9 +74,12 @@
       border: 1px solid #ddd;
     }
     @media (max-width: 768px) {
-      table, thead, caption, tbody, th, td, tr {
-        display: block;
-      }
+  td {
+    display: block;
+    text-align: left;
+  }
+}
+    
       th {
         display: none;
       }
@@ -93,7 +96,6 @@
         text-align: left;
         font-weight: bold;
       }
-    }
     caption {
       font-weight: bold;
       font-size: 1.2rem;
