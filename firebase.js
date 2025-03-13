@@ -1,3 +1,4 @@
+HEAD
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
 
@@ -39,3 +40,23 @@ export function loadTournaments() {
         }
     });
 }
+onValue(tournamentsRef, (snapshot) => {
+    const data = snapshot.val();
+    if (!data) {
+        tournamentsList.innerHTML = "<p>Brak turniejów do wyświetlenia.</p>";
+        return;
+    }
+    tournamentsList.innerHTML = "";
+    Object.keys(data).forEach((key) => {
+        let div = document.createElement("div");
+        div.classList.add("tournament-item");
+        let link = document.createElement("a");
+        link.href = data[key].link;
+        link.textContent = `${data[key].nazwa} - ${data[key].data}`;
+        div.appendChild(link);
+        tournamentsList.appendChild(div);
+    });
+}, (error) => {
+    console.error("Błąd Firebase:", error);
+    tournamentsList.innerHTML = "<p>Nie udało się pobrać turniejów.</p>";
+}); fb20a5838cf48a6ceec867ef29435ea30e419806
