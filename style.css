@@ -20,15 +20,20 @@ img {
 .menu-icon {
   position: fixed;
   top: 20px;
-  left: -50px;  /* Początkowo ukryta */
+  left: 20px;
   font-size: 30px;
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.8); /* Lekko przezroczyste tło */
   color: white;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: left 0.5s ease-in-out;
+  transition: background-color 0.3s, left 0.5s ease-in-out;
   z-index: 1000;
+}
+
+/* Animacja hover */
+.menu-icon:hover {
+  background-color: rgba(51, 51, 51, 1);
 }
 
 /* Gdy klasa "visible" jest dodana, ikona się pojawia */
@@ -40,13 +45,14 @@ img {
 .navbar {
   position: fixed;
   top: 0;
-  left: -250px;  /* Początkowo ukryta */
+  left: -260px; /* Początkowo ukryta */
   width: 250px;
   height: 100vh;
   background-color: #2c2f33;
   transition: left 0.5s ease-in-out;
-  padding-top: 50px;
+  padding-top: 60px;
   z-index: 999;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Lista nawigacji */
@@ -66,11 +72,13 @@ img {
   color: white;
   font-size: 18px;
   display: block;
-  transition: 0.3s;
+  transition: background-color 0.3s, padding-left 0.3s;
 }
 
+/* Efekt najechania */
 .navbar a:hover {
-  background-color: #575757;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 10px;
 }
 
 /* Gdy navbar ma klasę "open", wysuwa się */
@@ -99,23 +107,23 @@ th, td {
 /* Responsywność tabeli */
 @media (max-width: 768px) {
   table, thead, caption, tbody, th, td, tr {
-      display: block;
+    display: block;
   }
   th {
-      display: none;
+    display: none;
   }
   td {
-      display: block;
-      text-align: right;
-      position: relative;
-      padding-left: 50%;
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
   }
   td::before {
-      content: attr(data-label);
-      position: absolute;
-      left: 10px;
-      text-align: left;
-      font-weight: bold;
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    text-align: left;
+    font-weight: bold;
   }
 }
 
@@ -163,7 +171,7 @@ iframe {
 
 @media (max-width: 768px) {
   iframe {
-      height: 80vh;
+    height: 80vh;
   }
 }
 
