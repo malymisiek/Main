@@ -19,6 +19,8 @@ img {
 /* Nawigacja */
 .navbar {
   display: flex;
+  top: -60px;
+  transition: top 0.5s;
   align-items: center;
   justify-content: space-between;
   background-color: #2c2f33;
