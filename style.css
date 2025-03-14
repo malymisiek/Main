@@ -1,123 +1,143 @@
+/* Gradientowe tło */
 body {
-    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(70, 0, 0) 25%, rgb(130, 0, 0) 50%, rgb(70, 0, 0) 75%, rgb(0, 0, 0) 100%);
-    color: white;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  p {
-    color: white;
-  }
-  img {
-    width: 200px;
-    height: 200px;
-  }
-  h2 {
-    color: white;
-  }
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #2c2f33;
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .navbar a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    margin: 0 10px;
-  }
-  .menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-  }
-  .Turnieje {
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .video-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    overflow: hidden;
-  }
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .table-container {
-    overflow-x: auto;
-    width: 100%;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    color: white;
-  }
-  th, td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  @media (max-width: 768px) {
-    table, thead, caption, tbody, th, td, tr {
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(70, 0, 0) 25%, rgb(130, 0, 0) 50%, rgb(70, 0, 0) 75%, rgb(0, 0, 0) 100%);
+  color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Nagłówki i tekst */
+h2, p {
+  color: white;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+/* Nawigacja */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2c2f33;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.menu-icon, .search-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.profile-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #7289da;
+}
+
+/* Stylizacja tabel */
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Responsywność tabeli */
+@media (max-width: 768px) {
+  table, thead, caption, tbody, th, td, tr {
       display: block;
-    }
-    th {
+  }
+  th {
       display: none;
-    }
-    td {
+  }
+  td {
       display: block;
       text-align: right;
       position: relative;
       padding-left: 50%;
-    }
-    td::before {
+  }
+  td::before {
       content: attr(data-label);
       position: absolute;
       left: 10px;
       text-align: left;
       font-weight: bold;
-    }
   }
-  caption {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+}
+
+/* Video */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Turnieje */
+.tournament-item {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #444;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.tournament-item:hover {
+  background-color: #666;
+}
+
+.tournament-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* Iframe */
+iframe {
+  width: 100%;
+  height: 80vh;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  iframe {
+      height: 80vh;
   }
-  .container {
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: center;
-  }
-  .tournament-item {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: #444;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  .tournament-item:hover {
-    background-color: #666;
-  }
-  .tournament-item a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-  }
-      iframe {
-    width: 100%; /* Wypełnia całą szerokość dostępnego kontenera */
-    height: 80vh; /* 70% wysokości widoku */
-    border: none;
-  }
-  @media (max-width: 768px) {
-    iframe {
-      height: 80vh; /* Mniejsza wysokość na telefonach */
-    }
-  }
+}
+
+/* Kontener */
+.container {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
