@@ -16,36 +16,66 @@ img {
   height: 200px;
 }
 
-/* Nawigacja */
-.navbar {
-  display: flex;
-  top: -60px;
-  transition: top 0.5s;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #2c2f33;
+/* Styl dla ikony menu */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: -50px;  /* Początkowo ukryta */
+  font-size: 30px;
+  background-color: #333;
   color: white;
-  padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: left 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+/* Gdy klasa "visible" jest dodana, ikona się pojawia */
+.menu-icon.visible {
+  left: 20px;
+}
+
+/* Styl dla nawigacji */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -250px;  /* Początkowo ukryta */
+  width: 250px;
+  height: 100vh;
+  background-color: #2c2f33;
+  transition: left 0.5s ease-in-out;
+  padding-top: 50px;
+  z-index: 999;
+}
+
+/* Lista nawigacji */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  padding: 15px;
+  text-align: center;
 }
 
 .navbar a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
-  margin: 0 10px;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
 }
 
-.menu-icon, .search-icon {
-  font-size: 24px;
-  cursor: pointer;
+.navbar a:hover {
+  background-color: #575757;
 }
 
-.profile-icon img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid #7289da;
+/* Gdy navbar ma klasę "open", wysuwa się */
+.navbar.open {
+  left: 0;
 }
 
 /* Stylizacja tabel */
