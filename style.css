@@ -16,22 +16,6 @@ body {
   margin-top: 50px; /* Możesz dostosować wysokość */
 }
 
-/* Styl logo */
-.header-container img {
-  width: 200px; /* Dostosuj rozmiar do potrzeb */
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Wyśrodkowanie */
-}
-
-/* Styl nagłówka */
-.header-container h1 {
-  font-size: 36px;
-  color: white;
-  margin-top: 10px;
-  text-align: center;
-}
-
 /* Nagłówki i tekst */
 h2, p {
   color: white;
