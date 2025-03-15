@@ -7,32 +7,6 @@
   <link rel="icon" href="icon.jpg">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js" defer></script>
-  <style>
-    h1 {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .container {
-      margin: 20px auto;
-      max-width: 800px;
-      text-align: center;
-    }
-    .tournament-item {
-      margin: 20px 0;
-      padding: 15px;
-      background-color: #444;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .tournament-item:hover {
-      background-color: #666;
-    }
-    .tournament-item a {
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
-    }
-  </style>
   <script type="module">
     import { loadTournaments } from "./firebase.js";
     loadTournaments();
