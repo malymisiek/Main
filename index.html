@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-  <title>Polacy Rodacy</title>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polacy Rodacy</title>
   <link rel="icon" href="icon.jpg">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Ikona menu (początkowo ukryta) -->
+  <!-- Ikona menu -->
   <div id="menu-icon" class="menu-icon">☰</div>
 
   <!-- Nawigacja -->
-  <div id="navbar" class="navbar">
-    <a href="index.html"> Home Page</a>
-    <a href="tournaments.html">Tournament</a>
-    <a href="timeline.html">Time Line</a>
-  </div>
+  <nav id="navbar" class="navbar">
+    <ul>
+      <li><a href="index.html">Home Page</a></li>
+      <li><a href="tournaments.html">Tournament</a></li>
+      <li><a href="timeline.html">Time Line</a></li>
+    </ul>
+  </nav>
 
-  <div style="text-align: center">
+  <!-- Logo i nagłówek -->
+  <div class="content">
     <img src="icon.png" alt="Polacy Rodacy Logo">
-    <h1><p>Witaj na stronie Polacy Rodacy</p></h1>
+    <h1>Witaj na stronie Polacy Rodacy</h1>
+
     <div class="video-container">
       <iframe 
         width="560" 
@@ -33,9 +37,10 @@
       </iframe>
     </div>
   </div>
-  
+
   <hr>
 
+  <!-- Tabela zespołu -->
   <div class="table-container">
     <table>
       <caption>Team Squad</caption>
@@ -60,7 +65,7 @@
         <tr>
           <td data-label="Nick">Iluzjon</td>
           <td data-label="Role">Former Player, ex-Icon Designer</td>
-          <td data-label="Links"><a href="https://www.youtube.com/@iluzjon-tx4kz">YT</a>, <a href="https://www.tiktok.com/@iluzjon549?_t=8rTdxUdTa22&amp;_r=1">TikTok</a>, <a href="https://x.com/Monke32067803">X</a></td>
+          <td data-label="Links"><a href="https://www.youtube.com/@iluzjon-tx4kz">YT</a>, <a href="https://www.tiktok.com/@iluzjon549">TikTok</a>, <a href="https://x.com/Monke32067803">X</a></td>
         </tr>
         <tr>
           <td data-label="Nick">Dizel</td>
@@ -72,5 +77,6 @@
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>

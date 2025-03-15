@@ -22,12 +22,12 @@ img {
   top: 20px;
   left: 20px;
   font-size: 30px;
-  background-color: rgba(51, 51, 51, 0.8); /* Lekko przezroczyste tło */
+  background-color: rgba(51, 51, 51, 0.8);
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, left 0.5s ease-in-out;
+  transition: background-color 0.3s;
   z-index: 1000;
 }
 
