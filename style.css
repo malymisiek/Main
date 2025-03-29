@@ -154,7 +154,7 @@ th, td {
 }
 
 /* Turnieje */
-.bpsfasteu3 {
+.tournament-item {
   margin: 20px 0;
   padding: 15px;
   background-color: #444;
@@ -166,7 +166,7 @@ th, td {
   background-color: #666;
 }
 
-.bpsfasteu3 a {
+.tournament-item a {
   text-decoration: none;
   color: white;
   font-size: 18px;
