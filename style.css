@@ -4,7 +4,7 @@ body {
   color: white;
   margin: 0;
   font-family: Arial, sans-serif;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
 }
 
 /* Kontener dla logo i nagłówka */
@@ -101,7 +101,7 @@ img {
 .table-container {
   overflow-x: auto;
   width: 100%;
-  padding-bottom: 25px;
+  padding-bottom: 35px;
 }
 
 table {
@@ -194,6 +194,9 @@ iframe {
   text-align: center;
 }
 
+.timelibe-table{
+  padding-bottom: 35px;
+}
 /*footer {
   position: relative;
   bottom: 0;
