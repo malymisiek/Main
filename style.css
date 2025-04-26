@@ -101,6 +101,7 @@ img {
 .table-container {
   overflow-x: auto;
   width: 100%;
+  padding-bottom: 25px;
 }
 
 table {
