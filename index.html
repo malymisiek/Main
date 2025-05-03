@@ -5,7 +5,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Polacy Rodacy</title>
   <link rel="icon" href="icon.jpg">
-  <link rel="stylesheet" href="style.css">
+  <style>/* Gradientowe tło */
+    body {
+      background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(70, 0, 0) 25%, rgb(130, 0, 0) 50%, rgb(70, 0, 0) 75%, rgb(0, 0, 0) 100%);
+      color: white;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding-bottom: 20px;
+    }
+    
+    /* Kontener dla logo i nagłówka */
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 50px; /* Możesz dostosować wysokość */
+    }
+    
+    /* Nagłówki i tekst */
+    h2, p {
+      color: white;
+    }
+    
+    img {
+      width: 200px;
+      height: 200px;
+    }
+    
+    /* Styl dla ikony menu */
+    .menu-icon {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      background-color: rgba(51, 51, 51, 0.8);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 1000;
+    }
+    
+    /* Animacja hover */
+    .menu-icon:hover {
+      background-color: rgba(51, 51, 51, 1);
+    }
+    
+    /* Gdy klasa "visible" jest dodana, ikona się pojawia */
+    .menu-icon.visible {
+      left: 20px;
+    }
+    
+    /* Styl dla nawigacji */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: -260px; /* Początkowo ukryta */
+      width: 250px;
+      height: 100vh;
+      background-color: #2c2f33;
+      transition: left 0.5s ease-in-out;
+      padding-top: 60px;
+      z-index: 999;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Lista nawigacji */
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .navbar li {
+      padding: 15px;
+      text-align: center;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      display: block;
+      transition: background-color 0.3s, padding-left 0.3s;
+    }
+    
+    /* Efekt najechania */
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding-left: 10px;
+    }
+    
+    /* Gdy navbar ma klasę "open", wysuwa się */
+    .navbar.open {
+      left: 0;
+    }
+    
+    /* Stylizacja tabel */
+    .table-container {
+      overflow-x: auto;
+      width: 100%;
+      padding-bottom: 35px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    
+    /* Responsywność tabeli */
+    @media (max-width: 768px) {
+      table, thead, caption, tbody, th, td, tr {
+        display: block;
+      }
+      th {
+        display: none;
+      }
+      td {
+        display: block;
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+    
+    /* Video */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Turnieje */
+    .tournament-item {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #444;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .tournament-item:hover {
+      background-color: #666;
+    }
+    
+    .tournament-item a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+    
+    /* Iframe */
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+    }
+    
+    @media (max-width: 768px) {
+      iframe {
+        height: 80vh;
+      }
+    }
+    
+    /* Kontener */
+    .container {
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+    
+    .timelibe-table{
+      padding-bottom: 35px;
+    }
+    /*footer {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }*/
+    </style>
 </head>
 <body>
 
@@ -78,8 +287,7 @@
   <hr>
 
   <!-- Tabela zespołu -->
-  <div class="table-container">
-    <table>
+    <table class="table-container">
       <caption>Team Squad</caption>
       <thead>
         <tr>
@@ -122,6 +330,56 @@
         </tr>
       </tbody>
     </table>
+    <hr>
+    <h1>Timeline</h1>
+  <table class="timeline-table">
+    <tbody>
+      <tr>
+        <td>01.03.2024</td>
+        <td>Forming a team with maly_misiek Iluzjon and Dizel</td>
+      </tr>
+      <tr>
+        <td>03.11.2024</td>
+        <td>Dizel is fired and Lamoref joins</td>
+      </tr>
+      <tr>
+        <td>17.01.2025</td>
+        <td>Polacy Rodacy play a tournament B-tier and they finish at 65th - 86th place</td>
+      </tr>
+      <tr>
+        <td>08.03.2025</td>
+        <td>Iluzjon quit from Brawl Stars</td>
+      </tr>
+      <tr>
+        <td>28.03.2025</td>
+        <td>Polacy Rodacy play "OWN Masters Valencia - Open Qualifier II" with doughnut man and they finished at 129th - 229th.</td>
+      </tr>
+      <tr>
+        <td>29.03.2025</td>
+        <td>doughnut man join to Team</td>
+      </tr>
+      <tr>
+        <td>10.04.2025</td>
+        <td>Partnership with CELEST</td>
+      </tr>
+      <tr>
+        <td>26.04.2025</td>
+        <td>Polacy Rodacy play DPB Brawl Stars Tournament with Igmen from CELEST</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h1>Tournaments</h1>
+  <div class="container">
+    <div class="tournament-item">
+      <a href="bpsfasteu3.html">BPS Fast Tournaments EMEA #3 - 17.01.2025</a>
+    </div>
+    <div class="tournament-item">
+      <a href="OWNMastersValenciaOpenQualifierII.html">OWN Masters Valencia - Open Qualifier II - 28.03.2025</a>
+    </div>
+    <div class="tournament-item">
+      <a href="DPBtournament.html">DBP Brawl Stars Tournament - 26.04.2025</a>
+    </div>
   </div>
   <!--<footer>
     <p>&copy; 2023 Polacy Rodacy. Wszelkie prawa zastrzeżone.</p>
