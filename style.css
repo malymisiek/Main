@@ -146,6 +146,10 @@ body {
     margin: 20px auto;
     max-width: 800px;
     text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
+    gap: 20px;
+    padding: 20px;
   }
   
   .timelibe-table{
