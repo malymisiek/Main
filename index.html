@@ -173,7 +173,25 @@
     <p>Kontakt: <a href="mailto:kontakt@polacyrodacy.pl">kontakt@polacyrodacy.pl</a></p>
     <p>Odwiedź nas na: <a href="https://x.com/Polacy_Rodacy" target="_blank">X</a></p>
 </footer>-->
-  <script src="script.js"></script>
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+  
+  window.addEventListener("scroll", function() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+    if (currentScroll > lastScrollTop) {
+      // Scroll w dół
+      navbar.classList.add("hide");
+    } else {
+      // Scroll w górę
+      navbar.classList.remove("hide");
+    }
+  
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // dla iOS
+  }, false);
+  </script>
+  
 
 </body>
 </html>
