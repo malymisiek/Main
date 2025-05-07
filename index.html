@@ -18,7 +18,6 @@
           <li><a href="#tournaments">Tournaments</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="toggle-theme" onclick="toggleTheme()">🌙</button>
       </div>
     </nav>
   </header>
@@ -28,19 +27,7 @@
     <img src="PR.png" alt="Polacy Rodacy Logo">
     <h1>Welcome to Polacy Rodacy website</h1>
   </div>
-  <script>
-    function toggleTheme() {
-  document.body.classList.toggle('light-mode');
-  const themeButton = document.getElementById('toggle-theme');
-  if (document.body.classList.contains('light-mode')) {
-    themeButton.innerText = "🌙"; // Zmiana na ikonę ciemnego trybu
-  } else {
-    themeButton.innerText = "🌞"; // Zmiana na ikonę jasnego trybu
-  }
-}
 
-  </script>
-  
   <div id="następny turniej">
   <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
 <div id="countdown" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
