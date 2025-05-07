@@ -1,185 +1,117 @@
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(
-    0deg,
-    rgb(0, 0, 0) 0%,
-    rgb(50, 0, 0) 25%,
-    rgb(130, 0, 0) 50%,
-    rgb(50, 0, 0) 75%,
-    rgb(0, 0, 0) 100%
-  );
-  background-size: 100% 200%;
-  animation: moveBackground 20s linear infinite;
-  font-family: Arial, Helvetica, sans-serif;
-  color:#ffffff;
+:root {
+  --bg-color: #1a1a1a; /* Ciemny szary zamiast czerni */
+  --text-color: #e0e0e0; /* Jaśniejszy szary tekst */
+  --accent-color: #8a2e2e; /* Ciemne bordo dla akcentów */
 }
 
-  @keyframes moveBackground {
-    0% {
-      background-position: 0% 100%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
-  }
-  
-  /* Kontener dla logo i nagłówka */
-  .header-container, h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 50px; /* Możesz dostosować wysokość */
-  }
-  
-  /* Nagłówki i tekst */
-  h2, p {
-    color: white;
-  }
-  
-  img {
-    width: 200px;
-    height: 200px;
-  }
-  
-  /* Styl dla ikony menu */
-  .menu-icon {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-    background-color: rgba(51, 51, 51, 0.8);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 1000;
-  }
-  
-  /* Animacja hover */
-  .menu-icon:hover {
-    background-color: rgba(51, 51, 51, 1);
-  }
-  
-  /* Gdy klasa "visible" jest dodana, ikona się pojawia */
-  .menu-icon.visible {
-    left: 20px;
-  }
-  
-  /* Stylizacja tabel */
-  .table-container {
-    overflow-x: auto;
-    width: 100%;
-    padding-bottom: 35px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    color: white;
-  }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  /* Responsywność tabeli */
-  @media (max-width: 768px) {
-    table, thead, caption, tbody, th, td, tr {
-      display: block;
-    }
-    th {
-      display: none;
-    }
-    td {
-      display: block;
-      text-align: right;
-      position: relative;
-      padding-left: 50%;
-    }
-    td::before {
-      content: attr(data-label);
-      position: absolute;
-      left: 10px;
-      text-align: left;
-      font-weight: bold;
-    }
-  }
-  
-  /* Video */
-  .video-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    overflow: hidden;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Turnieje */
-  .tournament-item {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: #444;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .tournament-item:hover {
-    background-color: #666;
-  }
-  
-  .tournament-item a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-  }
-  
-  /* Iframe */
-  iframe {
-    width: 100%;
-    height: 80vh;
-    border: none;
-  }
-  
-  @media (max-width: 768px) {
-    iframe {
-      height: 80vh;
-    }
-  }
-  
-  /* Kontener */
-  .container {
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .timelibe-table{
-    padding-bottom: 35px;
-  }
-  /*footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-  }*/
+body.light-mode {
+  --bg-color: #f8f8f8; /* Jaśniejszy szaro-beżowy odcień */
+  --text-color: #333333; /* Ciemny szary tekst */
+  --accent-color: #9b1c1c; /* Stonowany czerwony */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header, footer {
+  background-color: var(--accent-color);
+  padding: 1em;
+  text-align: center;
+}
+
+button#toggle-theme {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 10px;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+h2, p {
+  color: var(--text-color); /* Użyj koloru tekstu dla lepszego dopasowania */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-color);
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+td, th {
+  background-color: rgba(255, 255, 255, 0.05); /* dla dark mode */
+}
+
+body.light-mode td, body.light-mode th {
+  background-color: rgba(0, 0, 0, 0.05); /* dla light mode */
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--accent-color);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links li {
+  font-size: 1rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--accent-color);
+}
+
+button#toggle-theme {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+button#toggle-theme:hover {
+  color: var(--accent-color);
+}
