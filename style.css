@@ -1,43 +1,97 @@
 :root {
-  --bg-color: #1a1a1a; /* Ciemny szary zamiast czerni */
-  --text-color: #e0e0e0; /* Jaśniejszy szary tekst */
-  --accent-color: #8a2e2e; /* Ciemne bordo dla akcentów */
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --accent-color: #8a2e2e;
 }
 
 body.light-mode {
-  --bg-color: #f8f8f8; /* Jaśniejszy szaro-beżowy odcień */
-  --text-color: #333333; /* Ciemny szary tekst */
-  --accent-color: #9b1c1c; /* Stonowany czerwony */
+  --bg-color: #f8f8f8;
+  --text-color: #333;
+  --accent-color: #9b1c1c;
 }
 
 body {
-  background-color: var(--bg-color);
+  background: linear-gradient(180deg, #000 0%, #460000 25%, #820000 50%, #460000 75%, #000 100%);
   color: var(--text-color);
-  font-family: sans-serif;
   margin: 0;
-  transition: background-color 0.3s, color 0.3s;
+  font-family: Arial, sans-serif;
+  padding-bottom: 20px;
 }
 
-header, footer {
-  background-color: var(--accent-color);
-  padding: 1em;
+h1, h2, p {
   text-align: center;
-}
-
-button#toggle-theme {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  padding: 10px;
-  background: transparent;
-  border: 2px solid var(--text-color);
   color: var(--text-color);
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-h2, p {
-  color: var(--text-color); /* Użyj koloru tekstu dla lepszego dopasowania */
+img {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+/* Menu */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.menu-icon:hover {
+  background-color: rgba(51, 51, 51, 1);
+}
+
+/* Video i iframe */
+.video-container, iframe {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.video-container {
+  padding-top: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+/* Turnieje */
+.tournament-item {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #444;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.tournament-item:hover {
+  background-color: #666;
+}
+
+.tournament-item a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* Tabela */
+.table-container {
+  overflow-x: auto;
+  padding-bottom: 35px;
 }
 
 table {
@@ -48,25 +102,60 @@ table {
 
 th, td {
   padding: 8px;
-  text-align: left;
   border: 1px solid #ddd;
-}
-
-td, th {
-  background-color: rgba(255, 255, 255, 0.05); /* dla dark mode */
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 body.light-mode td, body.light-mode th {
-  background-color: rgba(0, 0, 0, 0.05); /* dla light mode */
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Navbar */
-.navbar {
+/* RWD dla tabeli */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  th {
+    display: none;
+  }
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* poziomo */
+  justify-content: center; /* pionowo (jeśli ma wysokość) */
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Kontener */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+/* Navbar + header + footer */
+header, footer, .navbar {
   background-color: var(--accent-color);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  width: 100%;
+  padding: 1em;
+  text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,29 +178,29 @@ body.light-mode td, body.light-mode th {
   gap: 20px;
 }
 
-.navbar-links li {
-  font-size: 1rem;
-}
-
 .navbar-links a {
-  text-decoration: none;
   color: var(--text-color);
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .navbar-links a:hover {
   color: var(--accent-color);
 }
 
-button#toggle-theme {
+/* Przycisk zmiany trybu */
+#toggle-theme {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
   background: transparent;
   border: none;
-  font-size: 1.5rem;
   color: var(--text-color);
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
-button#toggle-theme:hover {
+#toggle-theme:hover {
   color: var(--accent-color);
 }
