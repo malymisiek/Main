@@ -11,7 +11,7 @@ body.light-mode {
 }
 
 body {
-  background: linear-gradient(180deg, #000 0%, #460000 25%, #820000 50%, #460000 75%, #000 100%);
+  /*background: linear-gradient(180deg, #000 0%, #460000 25%, #820000 50%, #460000 75%, #000 100%);*/
   color: var(--text-color);
   margin: 0;
   font-family: Arial, sans-serif;
