@@ -1,3 +1,10 @@
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --accent-color: #8a2e2e;
+}
+
+
 body {
   background: linear-gradient(180deg, #000 0%, #460000 25%, #820000 50%, #460000 75%, #000 100%);
   color: var(--text-color);
