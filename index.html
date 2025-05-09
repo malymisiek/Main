@@ -1,197 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Polacy Rodacy</title>
-  <link rel="icon" href="PR.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <style>body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: rgb(130, 0, 0);
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  
+  main {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  section {
+    margin-bottom: 2.5rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  h2 {
+    margin-top: 0;
+    color: rgb(130, 0, 0);
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    main {
+      padding: 1rem;
+    }
+  
+    section {
+      padding: 1rem;
+    }
+  }
+  
+  nav {
+    background-color: #1a1a1a;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover {
+    color: rgb(130, 0, 0);
+  }
+  
+  /* Mobile navbar */
+  @media (max-width: 600px) {
+    .nav-links {
+      flex-direction: column;
+      background-color: #1a1a1a;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      display: none;
+    }
+  
+    nav:hover .nav-links {
+      display: flex;
+    }
+  }
+  </style>
 </head>
 <body>
+  <nav>
+    <div class="nav-container">
+      <span class="logo">Polacy Rodacy</span>
+      <ul class="nav-links">
+        <li><a href="#team">Team</a></li>
+        <li><a href="#retired">Retired</a></li>
+        <li><a href="#tournaments">Tournaments</a></li>
+        <li><a href="#next-tournament">Next</a></li>
+        <li><a href="#timeline.html">Timeline</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="#" class="navbar-logo">Polacy Rodacy</a>
-        <ul class="navbar-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#tournaments">Tournaments</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+    <h1>Polacy Rodacy</h1>
+    <p>Official Brawl Stars Esports Team</p>
   </header>
-  
-  <!-- Logo i nagłówek -->
-  <div class="header-container">
-    <img src="PR.png" alt="Polacy Rodacy Logo">
-    <h1>Welcome to Polacy Rodacy website</h1>
-  </div>
-<section id="home">
-  <div id="następny turniej">
-  <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
-<div id="countdown" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
-<script>
-  function updateCountdown() {
-    const eventDate = new Date('2025-05-31T18:00:00+02:00'); // CET to UTC+2
-    const now = new Date();
-    const diff = eventDate - now;
 
-    if (diff <= 0) {
-      document.getElementById('countdown').innerText = '✅ Tournament has started!';
-      return;
-    }
+  <main>
+    <section id="team">
+      <h2>Current Roster</h2>
+      <ul>
+        <li>🇵🇱 maly_misiek (Captain)</li>
+        <li>🇵🇱 Lamoref</li>
+        <li>🇨🇿 Doughnut man</li>
+      </ul>
+    </section>
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+    <section id="retired">
+      <h2>Retired Players</h2>
+      <ul>
+        <li>🇵🇱 Dizel</li>
+        <li>🇵🇱 Iluzjon</li>
+      </ul>
+    </section>
 
-    document.getElementById('countdown').innerText =
-      `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
+    <section id="tournaments">
+      <h2>Tournament History</h2>
+      <ul>
+        <li><strong>BPS Fast Tournaments EMEA #3</strong> — Jan 17, 2025</li><a href="https://matcherino.com/t/bps-fast-tournaments-emea-3/bracket">Bracket</a>.</li>
+        <li><strong>OWN Masters Valencia – Open Qualifier II</strong> — Mar 28, 2025</li><a href="https://matcherino.com/t/own-qualifier-2/bracket">Bracket</a>, <a href="https://www.youtube.com/watch?v=YR_CgIzWfpc&si=vFrQmtxcZWfSk0J9">Replay</a>.</li>
+        <li><strong>DPB Brawl Stars Tournament</strong> — Apr 26, 2025, <a href="https://challonge.com/pl/dpb_tournament/module">Bracket </a>, <a href="https://www.youtube.com/watch?v=IRnQKNEsru8&ab_channel=PolacyRodacy">Replay</a>.</li>
+      </ul>
+    </section>
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
-  </div>
-  <div style="aspect-ratio: 16/9; max-width: 100%; height: auto;">
-    <iframe
-      src="https://player.twitch.tv/?channel=maly_misiek09&parent=polacyrodacy.github.io"
-      allowfullscreen
-      frameborder="0"
-      scrolling="no"
-      height="100%"
-      width="100%">
-    </iframe>
-  </div>
-  </section>    
-
-  <hr>
-
-  <!-- Tabela zespołu -->
-   <section id="about">
-    <table class="table-container">
-      <caption><h1>Team Squad</h1></caption>
-      <thead>
-        <tr>
-          <th>Nick</th>
-          <th>Role</th>
-          <th>Country</th>
-          <th>Links</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Nick">maly_misiek</td>
-          <td data-label="Role">Player, Manager, 2D & 3D Graphic Designer, Programmer</td>
-          <td data-label="Country">🇵🇱</td>
-          <td data-label="Links"><a href="https://www.youtube.com/@maly_misiek">YT</a>, <a href="https://x.com/maly_misiek">X</a></td>
-        </tr>
-        <tr>
-          <td data-label="Nick">Lamoref</td>
-          <td data-label="Role">Player</td>
-          <td data-label="Country">🇵🇱</td>
-          <td data-label="Links"><a href="https://www.youtube.com/@lamoref">YT</a></td>
-        </tr>
-        <tr>
-          <td data-label="Nick">doughnut man</td>
-          <td data-label="Role">Player</td>
-          <td data-label="Country">🇨🇿</td>
-          <td data-label="Links"><a href="https://www.tiktok.com/@the_d0ughnut_man?_t=ZN-8v5xehw0cmU&_r=1">TikTok</a></td>
-        </tr>
-        <tr>
-          <td data-label="Nick">Iluzjon</td>
-          <td data-label="Role">Former Player, ex-Icon Designer</td>
-          <td data-label="Country">🇵🇱</td>
-          <td data-label="Links"><a href="https://www.youtube.com/@iluzjon-tx4kz">YT</a>, <a href="https://www.tiktok.com/@iluzjon549">TikTok</a>, <a href="https://x.com/Monke32067803">X</a></td>
-        </tr>
-        <tr>
-          <td data-label="Nick">Dizel</td>
-          <td data-label="Role">Former Player</td>
-          <td data-label="Country">🇵🇱</td>
-          <td data-label="Links">IDK</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-    <h1>Timeline</h1>
-  <table class="timeline-table">
-    <tbody>
-      <tr>
-        <td>01.03.2024</td>
-        <td>Forming a team with maly_misiek Iluzjon and Dizel</td>
-      </tr>
-      <tr>
-        <td>03.11.2024</td>
-        <td>Dizel is fired and Lamoref joins</td>
-      </tr>
-      <tr>
-        <td>17.01.2025</td>
-        <td>Polacy Rodacy play a tournament B-tier and they finish at 65th - 86th place</td>
-      </tr>
-      <tr>
-        <td>08.03.2025</td>
-        <td>Iluzjon quit from Brawl Stars</td>
-      </tr>
-      <tr>
-        <td>28.03.2025</td>
-        <td>Polacy Rodacy play "OWN Masters Valencia - Open Qualifier II" with doughnut man and they finished at 129th - 229th.</td>
-      </tr>
-      <tr>
-        <td>29.03.2025</td>
-        <td>doughnut man join to Team</td>
-      </tr>
-      <tr>
-        <td>10.04.2025</td>
-        <td>Partnership with CELEST</td>
-      </tr>
-      <tr>
-        <td>26.04.2025</td>
-        <td>Polacy Rodacy play DPB Brawl Stars Tournament with Igmen from CELEST</td>
-      </tr>
-    </tbody>
-  </table>
+    <section id="next-tournament">
+      <h2>Next Tournament</h2>
+      <p><div id="następny turniej">
+        <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
+      <div id="countdown" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
+      <script>
+        function updateCountdown() {
+          const eventDate = new Date('2025-05-31T18:00:00+02:00'); // CET to UTC+2
+          const now = new Date();
+          const diff = eventDate - now;
+      
+          if (diff <= 0) {
+            document.getElementById('countdown').innerText = '✅ Tournament has started!';
+            return;
+          }
+      
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((diff / 1000 / 60) % 60);
+          const seconds = Math.floor((diff / 1000) % 60);
+      
+          document.getElementById('countdown').innerText =
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+      
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      </script>
+        </div></p>
+      <p>Format: Round 1 – Bo1 of Bo3, Semifinals – Bo3 of Bo3, Finals – Bo5 of Bo3</p>
+      <p><a href="https://matcherino.com/t/teamastro10">Team Astro #10</a></p>
+      <p>Roaster for tournament: maly_misiek, Lamoref, doughnut man</p>
+    </section>
+    <section id="timeline">
+      <h2>History</h2>
+      <ul>
+          <li>01.03.2024 - Forming a team with maly_misiek Iluzjon and Dizel</li>
+<li>03.11.2024 - Dizel is fired and Lamoref joins</li>
+<li>17.01.2025 - Polacy Rodacy play a tournament B-tier and they finish at 65th - 86th place</li>
+<li>08.03.2025 - Iluzjon quit from Brawl Stars</li>
+<li>28.03.2025 - Polacy Rodacy play "OWN Masters Valencia - Open Qualifier II" with doughnut man and they finished at 129th - 229th.</li>
+<li>29.03.2025 - doughnut man join to Team</li>
+<li>10.04.2025 - Partnership with CELEST</li>
+<li>26.04.2025 - Polacy Rodacy play DPB Brawl Stars Tournament with Igmen from CELEST</li>
+      </ul>
   </section>
-  <hr>
-  <section id="tournaments">
-  <h1>Tournaments</h1>
-  <div class="container">
-    <div class="tournament-item">
-      <a href="bpsfasteu3.html">BPS Fast Tournaments EMEA #3 - 17.01.2025</a>
-    </div>
-    <div class="tournament-item">
-      <a href="OWNMastersValenciaOpenQualifierII.html">OWN Masters Valencia - Open Qualifier II - 28.03.2025</a>
-    </div>
-    <div class="tournament-item">
-      <a href="DPBtournament.html">DBP Brawl Stars Tournament - 26.04.2025</a>
-    </div>
-  </div>
-  </section>
-  <!--<footer>
-    <p>&copy; 2023 Polacy Rodacy. Wszelkie prawa zastrzeżone.</p>
-    <p>Kontakt: <a href="mailto:kontakt@polacyrodacy.pl">kontakt@polacyrodacy.pl</a></p>
-    <p>Odwiedź nas na: <a href="https://x.com/Polacy_Rodacy" target="_blank">X</a></p>
-</footer>-->
-<script>
-  let lastScrollTop = 0;
-  const navbar = document.getElementById("navbar");
-  
-  window.addEventListener("scroll", function() {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  
-    if (currentScroll > lastScrollTop) {
-      // Scroll w dół
-      navbar.classList.add("hide");
-    } else {
-      // Scroll w górę
-      navbar.classList.remove("hide");
-    }
-  
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // dla iOS
-  }, false);
-  </script>
-  
+  </main>
 
+  <footer>
+    <p>&copy; 2025 Polacy Rodacy. All rights reserved.</p>
+  </footer>
 </body>
 </html>
