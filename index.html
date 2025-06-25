@@ -189,35 +189,32 @@
       <p><div id="następny turniej">
         <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
       <div id="countdown" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
-<script>
-  function updateCountdown() {
-    const eventDate = new Date('2025-07-13T17:00:00+02:00'); // CET (UTC+2)
-    const now = new Date();
-    const diff = eventDate - now;
-
-    if (diff <= 0) {
-      document.getElementById('countdown').innerText = '✅ Tournament has started!';
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-    const milliseconds = Math.floor(diff % 1000);
-
-  
-    const msFormatted = milliseconds.toString().padStart(3, '0');
-
-    document.getElementById('countdown').innerText =
-      `${days}d ${hours}h ${minutes}m ${seconds}s ${msFormatted}ms`;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 50);
-</script>
+      <script>
+        function updateCountdown() {
+          const eventDate = new Date('2025-07-13T17:00:00+02:00'); // CET to UTC+2
+          const now = new Date();
+          const diff = eventDate - now;
+      
+          if (diff <= 0) {
+            document.getElementById('countdown').innerText = '✅ Tournament has started!';
+            return;
+          }
+      
+           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+           const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+           const minutes = Math.floor((diff / 1000 / 60) % 60);
+          const seconds = Math.floor((diff / 1000) % 60);
+      
+          
+          document.getElementById('countdown').innerText =
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+      
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      </script>
         </div></p>
-      <p><a href="https://matcherino.com/supercell/tournaments/154927/bracket/bracket" target="_blank" rel="noopener noreferrer">June Brawlfest</a></p>
+      <p><a href="https://matcherino.com/supercell/tournaments/154927/bracket/bracket" target="_blank" rel="noopener noreferrer">Orion July Daily #13</a></p>
       <p>Squad for tournament: maly_misiek, Igmen, Dizel</p>
       <!--<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 2rem;">
   <iframe
