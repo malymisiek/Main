@@ -203,7 +203,37 @@
       </ul>
     </section>
     <section id="next-tournament">
-      <h2>Next Tournament</h2>
+      <h2>Next Tournaments</h2>
+      <p><div id="następny turniej">
+        <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
+      <div id="countdown" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
+      <script>
+        function updateCountdown() {
+          const eventDate = new Date('2025-07-11T19:00:00+02:00'); // CET to UTC+2
+          const now = new Date();
+          const diff = eventDate - now;
+      
+          if (diff <= 0) {
+            document.getElementById('countdown').innerText = '✅ Tournament has started!';
+            return;
+          }
+      
+           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+           const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+           const minutes = Math.floor((diff / 1000 / 60) % 60);
+          const seconds = Math.floor((diff / 1000) % 60);
+      
+          
+          document.getElementById('countdown').innerText =
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+      
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      </script>
+        </div></p>
+      <p><a href="https://matcherino.com/t/lchhseries0725emea" target="_blank" rel="noopener noreferrer">Test Tournament</a></p>
+      <p>Squad for tournament: maly_misiek, Igmen, Kevin</p>
       <p><div id="następny turniej">
         <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
       <div id="countdown" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
