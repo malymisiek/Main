@@ -207,7 +207,7 @@
       <h2>Next Tournaments</h2>
       <p><div id="następny turniej">
         <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
-      <div id="countdown" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
+      <div id="countdown2" style="font-size: 2em; text-align: center; font-weight: bold;"></div>
       <script>
         function updateCountdown() {
           const eventDate = new Date('2025-07-11T19:00:00+02:00'); // CET to UTC+2
@@ -215,7 +215,7 @@
           const diff = eventDate - now;
       
           if (diff <= 0) {
-            document.getElementById('countdown').innerText = '✅ Tournament has started!';
+            document.getElementById('countdown2').innerText = '✅ Tournament has started!';
             return;
           }
       
@@ -225,7 +225,7 @@
           const seconds = Math.floor((diff / 1000) % 60);
       
           
-          document.getElementById('countdown').innerText =
+          document.getElementById('countdown2').innerText =
             `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
       
@@ -233,7 +233,7 @@
         setInterval(updateCountdown, 1000);
       </script>
         </div></p>
-      <p><a href="https://matcherino.com/t/lchhseries0725emea" target="_blank" rel="noopener noreferrer">Test Tournament</a></p>
+      <p><a href="https://matcherino.com/supercell/tournaments/155682" target="_blank" rel="noopener noreferrer">Test Tournament</a></p>
       <p>Squad for tournament: maly_misiek, Igmen, Kevin</p>
       <p><div id="następny turniej">
         <h2 style="text-align:center;">⏳ The tournament starts in:</h2>
