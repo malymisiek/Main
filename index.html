@@ -6,7 +6,32 @@
   <title>Polacy Rodacy</title>
   <link rel="icon" type="image/png" href="PR.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>body {
+  <style>
+  :root {
+  --bg: #f4f4f4;
+  --text: #1a1a1a;
+  --section-bg: #fff;
+  --accent: rgb(130, 0, 0);
+  --nav-bg: #1a1a1a;
+  --nav-link: #fff;
+  --footer-bg: #222;
+  --footer-text: #aaa;
+  --icon-color: #1a1a1a;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f4f4f4;
+  --section-bg: #1e1e1e;
+  --accent: rgb(255, 90, 90);
+  --nav-bg: #000;
+  --nav-link: #fff;
+  --footer-bg: #000;
+  --footer-text: #777;
+  --icon-color: #f4f4f4;
+}
+
+  body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
@@ -149,6 +174,33 @@
 .social-icons a:hover {
   color: rgb(130, 0, 0);
 }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+section {
+  background: var(--section-bg);
+}
+h2 {
+  color: var(--accent);
+}
+.nav-links a {
+  color: var(--nav-link);
+}
+nav {
+  background-color: var(--nav-bg);
+}
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
+.social-icons a {
+  color: var(--icon-color);
+}
+.social-icons a:hover {
+  color: var(--accent);
+}
+
   </style>
 </head>
 <body>
@@ -162,6 +214,10 @@
         <li><a href="#timeline">Timeline</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button id="theme-toggle" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;" title="Toggle theme">
+  <i class="fas fa-moon"></i>
+</button>
+
     </div>
   </nav>
   <header>
@@ -322,5 +378,22 @@
   <footer>
     <p>&copy; 2025 Polacy Rodacy. All rights reserved.</p>
   </footer>
+  <script>
+  const toggle = document.getElementById('theme-toggle');
+  const icon = toggle.querySelector('i');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') icon.classList.replace('fa-moon', 'fa-sun');
+
+  toggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+  });
+</script>
+
 </body>
 </html>
